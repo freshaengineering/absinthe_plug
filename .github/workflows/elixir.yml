@@ -33,7 +33,7 @@ jobs:
             otp: "26"
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
 
     - uses: erlef/setup-beam@fc68ffb90438ef2936bbb3251622353b3dcb2f93 # v1
       with:
@@ -41,7 +41,7 @@ jobs:
         elixir-version: ${{matrix.elixir}}
 
     - name: Restore deps cache
-      uses: actions/cache@v2
+      uses: actions/cache@8492260343ad570701412c2f464a5877dc76bace # v2
       with:
         path: |
           deps
@@ -67,7 +67,7 @@ jobs:
       run: mix test
 
     - name: Cache/uncache PLTs
-      uses: actions/cache@v3
+      uses: actions/cache@6f8efc29b200d32929f49075959781ed54ec270c # v3
       with:
         path: |
           priv/plts
